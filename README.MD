@@ -46,3 +46,18 @@ Red Toys is a collection of custom PowerShell and Bash scripts designed to autom
 # Quick scan with minimal output
 .\LHF_collector.ps1 -OutputFile "quick_scan.txt"
 ```
+
+### weakScheduledTask_hunt.ps1
+
+**Weak scheduled task hunting** - Audits scheduled tasks running under high-privilege accounts for common exploitation vectors
+
+```powershell
+# Prints all privileged task findings to the terminal.
+.\weakScheduledTaskHunt.ps1
+
+# Excludes built-in Windows tasks; focuses on third-party and custom tasks.
+.\weakScheduledTaskHunt.ps1 -IgnoreDefaults
+
+# Excludes built-in Windows tasks and exports findings to CSV.
+.\weakScheduledTaskHunt.ps1 -IgnoreDefaults -ExportCsv "C:\audit\priv_tasks.csv"
+```
